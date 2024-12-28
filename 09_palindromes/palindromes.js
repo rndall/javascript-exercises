@@ -1,8 +1,10 @@
 const palindromes = function (str) {
+	const remove = [" ", ",", ".", "!"];
 	const arr = str.toLowerCase().split("");
 
 	for (let i = 0; i < arr.length; i++) {
-		if (arr[i].toUpperCase() === arr[i].toLowerCase()) {
+		const char = arr[i];
+		if (remove.includes(arr[i])) {
 			arr.splice(i, 1);
 			i--;
 		}
