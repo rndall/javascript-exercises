@@ -1,5 +1,5 @@
 const palindromes = function (str) {
-	const arr = str.split("");
+	const arr = str.toLowerCase().split("");
 
 	for (let i = 0; i < arr.length; i++) {
 		if (arr[i].toUpperCase() === arr[i].toLowerCase()) {
