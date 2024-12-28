@@ -1,19 +1,13 @@
 const palindromes = function (str) {
 	const remove = [" ", ",", ".", "!"];
-	const arr = str.toLowerCase().split("");
+	const clean = str
+		.toLowerCase()
+		.split("")
+		.filter((char) => !remove.includes(char))
+		.join("");
 
-	for (let i = 0; i < arr.length; i++) {
-		const char = arr[i];
-		if (remove.includes(arr[i])) {
-			arr.splice(i, 1);
-			i--;
-		}
-	}
-
-	const trimmed = arr.join("");
-
-	const reversed = arr.reverse().join("");
-	return trimmed === reversed;
+	const reversed = clean.split("").reverse().join("");
+	return clean === reversed;
 };
 
 // Do not edit below this line
