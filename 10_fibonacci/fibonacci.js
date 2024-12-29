@@ -1,4 +1,6 @@
 const fibonacci = function (index) {
+	if (index < 0) return "OOPS";
+
 	let start = 0;
 	let lastNum = 1;
 	for (let i = 0; i < index; i++) {
