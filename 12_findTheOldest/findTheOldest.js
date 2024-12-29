@@ -1,10 +1,9 @@
 const findTheOldest = function (arr) {
 	arr.sort((a, b) => {
-		ageA = a.yearOfDeath - a.yearOfBirth;
-		ageB = b.yearOfDeath - b.yearOfBirth;
-		console.log("first", ageA, ageB);
+		ageA = (a.yearOfDeath || new Date().getFullYear()) - a.yearOfBirth;
+		ageB = (b.yearOfDeath || new Date().getFullYear()) - b.yearOfBirth;
 
-		return Number.isNaN(ageB) ? -1 : ageB - ageA;
+		return ageB - ageA;
 	});
 
 	return arr[0];
